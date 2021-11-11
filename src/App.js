@@ -8,6 +8,7 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/NotFound/NotFound';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
+import Orders from './Pages/Orders/Orders';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route path="/products">
               <Products></Products>
+            </Route>
+            <Route path="/orders/:id">
+              <Orders></Orders>
             </Route>
             <Route path="/login">
               <Login></Login>
