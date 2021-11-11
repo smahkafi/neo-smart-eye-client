@@ -1,9 +1,10 @@
 import React from 'react';
+import payment from "../../../../img/online_transactions.png"
 
 const Payment = () => {
     return (
         <div>
-            <h2>this is payment</h2>
+            <img className="img-fluid" src={payment} alt="" />
         </div>
     );
 };
