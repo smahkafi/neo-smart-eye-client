@@ -8,8 +8,8 @@ const Footer = () => {
         <div className="bg-dark">
             <Container >
                 <div className="row align-self-center">
-                    <div className="col-sm-6 col-md-6 col-lg-3">
-                        <img src={logo} alt="" />
+                    <div className="col-sm-6 col-md-6 col-lg-3 align-self-center">
+                        <img className="" src={logo} alt="" />
                     </div>
                     <div className="col-sm-6 col-md-6 col-lg-3">
                         <h2>SERVICES</h2>

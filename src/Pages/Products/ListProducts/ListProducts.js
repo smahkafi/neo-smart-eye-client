@@ -1,5 +1,9 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 import React, { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
+import Rating from 'react-rating';
 
 const ListProducts = () => {
 
@@ -26,6 +30,13 @@ const ListProducts = () => {
                                         <h2>{product.name}</h2>
                                         <p>{product.category}</p>
                                         <p>{product.rating}</p>
+                                        <Rating
+                                            readonly
+                                            style={{ color: "" }}
+                                            initialRating={product.rating}
+                                            emptySymbol={<FontAwesomeIcon icon={emptyStar} />}
+                                            fullSymbol={<FontAwesomeIcon icon={fullStar} />}
+                                        />{" "}
                                         <p>{product.price}</p>
                                     </div>
                                     <Button>Buy Now</Button>

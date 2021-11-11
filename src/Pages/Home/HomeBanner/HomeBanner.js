@@ -10,12 +10,14 @@ const HomeBanner = () => {
             <div className="col-sm-12 col-md-6 col-lg-6 left-img" >
                 <img src={leftimg} alt="glass" style={{ width: '50%' }} />
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-6 right-img ">
-                <h2 className="text-uppercase text-white">A Varaity of stylis</h2>
-                <p className="text-uppercase text-white">A find the best possible for you</p>
-                <Link to="/products">
-                    <Button className="text-uppercase btn-primary">Explore more</Button>
-                </Link>
+            <div className="col-sm-12 col-md-6 col-lg-6 right-img my-auto">
+                <div className="align-self-center" style={{ margin: "auto 0px" }}>
+                    <h2 className="text-uppercase text-white">A Varaity of stylis</h2>
+                    <p className="text-uppercase text-white">A find the best possible for you</p>
+                    <Link to="/products">
+                        <Button className="text-uppercase btn-primary">Explore more</Button>
+                    </Link>
+                </div>
             </div>
         </div>
     );

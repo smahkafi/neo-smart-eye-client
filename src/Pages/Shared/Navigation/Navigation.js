@@ -22,20 +22,24 @@ const Navigation = () => {
                         <Nav.Link as={NavLink} className="text-dark" to="/products">Products</Nav.Link>
 
                         {
-                            user?.email ?
+                            !user?.email ?
                                 <>
-                                    <Button Button onClick={logOut} className="ms-2 btn-primary">Log Out</Button>
-                                    <NavLink to="/dashboard">Dash Board</NavLink>
+                                    <NavLink to="/login">
+                                        <Button className="btn-primary"> log in</Button>
+                                    </NavLink>
+                                    {/* <Button onClick={logOut} className="ms-2 btn-primary">Log Out</Button>
+                                    <NavLink to="/dashboard">Dash Board</NavLink> */}
                                 </>
 
                                 // <Nav.Link as={NavLink} className="text-dark" to="/dashboard">DASHBOARD</Nav.Link>
                                 : (
                                     <>
-                                        <NavLink to="/login">
+                                        {/* <NavLink to="/login">
                                             <Button className="btn-primary"> log in</Button>
-                                        </NavLink>
+                                        </NavLink> */}
+                                        <NavLink className="text-decoration-none text-light btn bg-primary" to="/dashboard">Dash Board</NavLink>
 
-                                        {/* <NavDropdown
+                                        <NavDropdown
                                             title={
                                                 <img
                                                     style={{
@@ -52,7 +56,7 @@ const Navigation = () => {
                                                     SIGN OUT
                                                 </button>
                                             </div>
-                                        </NavDropdown> */}
+                                        </NavDropdown>
                                     </>
                                 )}
                     </Navbar.Collapse>

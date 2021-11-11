@@ -1,3 +1,7 @@
+import { faPaypal } from '@fortawesome/free-brands-svg-icons';
+import { faSmileBeam } from '@fortawesome/free-regular-svg-icons';
+import { faHome, faPlus, faShoppingCart, faStar, faTasks, faUserLock } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import {
     Switch,
@@ -8,13 +12,17 @@ import {
 } from "react-router-dom";
 import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import AddProducts from '../AdminDashBoard/AddProducts/AddProducts';
+import CheckReviews from '../AdminDashBoard/CheckReviews/CheckReviews';
 import MakeAdmin from '../AdminDashBoard/MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../AdminDashBoard/ManageAllOrders/ManageAllOrders';
+import ManageAllProducts from '../AdminDashBoard/ManageAllProducts/ManageAllProducts';
 import MyOrders from '../UserDashBoard/MyOrders/MyOrders';
 import MyReview from '../UserDashBoard/MyReview/MyReview';
 import Payment from '../UserDashBoard/Payment/Payment';
+import "./ManageAllProducts.css"
 
 const DashBoard = () => {
     let { path, url } = useRouteMatch();
@@ -23,9 +31,12 @@ const DashBoard = () => {
         <div className="container-fluid">
             <Navigation></Navigation>
             <div className="row">
-                <div style={{ height: "100vh" }} className="col-sm-12 col-md-6 col-lg-3 text-white bg-dark">
+                <div style={{ minHeight: "80vh" }} className="col-sm-12 col-md-6 col-lg-3 bg-dark text-white pt-5">
                     {/* accordion */}
                     <div class="accordion" id="accordionExample">
+                        <Link to="/">
+                            <FontAwesomeIcon className="fs-1 m-0 p-0 text-white" icon={faHome}></FontAwesomeIcon>
+                        </Link>
                         {
                             admin && <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -38,15 +49,23 @@ const DashBoard = () => {
 
 
                                         <Link className="text-decoration-none" to={`${url}/manageAllOrders`}>
-                                            <li>Manage Orders</li>
+                                            <li style={{ listStyle: 'none' }} className="text-start"> <FontAwesomeIcon icon={faTasks} /> Manage Orders</li>
                                         </Link>
 
                                         <Link className="text-decoration-none" to={`${url}/addProduct`}>
-                                            <li>Add Product</li>
+                                            <li style={{ listStyle: 'none' }} className="text-start"> <FontAwesomeIcon icon={faPlus} /> Add Product</li>
                                         </Link>
 
                                         <Link className="text-decoration-none" to={`${url}/makeAdmin`}>
-                                            <li>Make Admin</li>
+                                            <li style={{ listStyle: 'none' }} className="text-start"> <FontAwesomeIcon icon={faUserLock} /> Make Admin</li>
+                                        </Link>
+
+                                        <Link className="text-decoration-none" to={`${url}/manageAllProducts`}>
+                                            <li style={{ listStyle: 'none' }} className="text-start"> <FontAwesomeIcon icon={faTasks} /> Manage All Products</li>
+                                        </Link>
+
+                                        <Link className="text-decoration-none" to={`${url}/checkReviews`}>
+                                            <li style={{ listStyle: 'none' }} className="text-start"> <FontAwesomeIcon icon={faStar} /> Check All Reviews</li>
                                         </Link>
                                     </div>
                                 </div>
@@ -61,15 +80,15 @@ const DashBoard = () => {
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <Link className="text-decoration-none" to={`${url}`}>
-                                        <li> My Order</li>
+                                        <li className="text-start fs-4" style={{ listStyle: 'none' }}> <FontAwesomeIcon className="fs-4" icon={faShoppingCart}></FontAwesomeIcon> My Order</li>
                                     </Link>
 
                                     <Link className="text-decoration-none" to={`${url}/payment`}>
-                                        <li>Payment</li>
+                                        <li className="text-start fs-4" style={{ listStyle: 'none' }}> <FontAwesomeIcon className="fs-4" icon={faPaypal}></FontAwesomeIcon> Payment </li>
                                     </Link>
 
                                     <Link className="text-decoration-none" to={`${url}/review`}>
-                                        <li>Review</li>
+                                        <li className="text-start fs-4" style={{ listStyle: 'none' }}><FontAwesomeIcon className="fs-4" icon={faSmileBeam}></FontAwesomeIcon> Review</li>
                                     </Link>
                                 </div>
                             </div>
@@ -78,7 +97,7 @@ const DashBoard = () => {
                     </div>
                     {/* accordion */}
                 </div>
-                <div style={{ height: "100vh" }} className="col-sm-12 col-md-6 col-lg-9 text-white bg-secondary">
+                <div style={{ minHeight: "80vh" }} className="bg-order-list col-sm-12 col-md-6 col-lg-9 bg-secondary pt-5 text-white ">
                     <Switch>
                         <Route exact path={path}>
                             <MyOrders />
@@ -100,30 +119,18 @@ const DashBoard = () => {
                         <AdminRoute path={`${path}/makeAdmin`}>
                             <MakeAdmin />
                         </AdminRoute>
-
-
-
+                        <AdminRoute path={`${path}/manageAllProducts`}>
+                            <ManageAllProducts />
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/checkReviews`}>
+                            <CheckReviews />
+                        </AdminRoute>
                     </Switch>
-
                 </div>
-            </div>
-        </div>
+                <Footer></Footer>
+            </div >
+        </div >
     );
 };
 
 export default DashBoard;
-
-
-
-
-{/* <Switch>
-    <Route exact path={path}>
-        <DashBoardHome></DashBoardHome>
-    </Route>
-    <AdminRoute path={`${path}/makeAdmin`}>
-        <MakeAdmin></MakeAdmin>
-    </AdminRoute>
-    <AdminRoute path={`${path}/addDoctor`}>
-        <AddDoctor></AddDoctor>
-    </AdminRoute>
-</Switch> */}

@@ -37,29 +37,33 @@ const MyReview = () => {
                         className="p-2 m-2 w-25 text-center"
                         defaultValue={user?.displayName}
                         {...register("name")}
+                        required
+
                     />
                     {/* Rating */}
                     <input
                         {...register("rating")}
-                        placeholder="give a ratting"
+                        placeholder="Give your rating"
                         className="p-2 m-2 w-25 text-center "
                         required
                     />
+                    <br />
 
                     {/* description  */}
                     <textarea
                         {...register("comment")}
                         rows="5"
-                        cols="15"
+                        cols="100"
                         placeholder="Write a short note"
-                        className="p-2 m-2 w-25 text-center "
+                        className="p-4 my-2 mx-auto w-50"
                         required
                     />
+                    <br />
 
                     <input
                         type="submit"
                         value="SEND"
-                        className="fw-bold text-muted p-2 m-2 w-25 btn btn-outline-primary"
+                        className="fw-bold text-muted p-2 m-2 w-25 btn btn-light btn-outline-warning"
                     />
                 </form>
             </div>
