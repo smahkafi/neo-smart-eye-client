@@ -37,17 +37,17 @@ const ManageAllOrders = () => {
     };
 
 
-    const confirmID = (id) => {
-        const confirm = window.confirm("wanna confirm ?");
-        if (confirm) {
+    const confirmationOrder = (id) => {
+        const confirmOrder = window.confirm("Are you sure to confirm?");
+        if (confirmOrder) {
             fetch(`http://localhost:5000/orders/${id}`, {
                 method: "PUT",
             })
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.modifiedCount === 1) {
-                        alert("ordered confirmed");
-                        setOrderConfirm(!confirm);
+                        alert("Your order confirmed");
+                        setOrderConfirm(!confirmOrder);
                     }
                 });
         }
@@ -57,19 +57,19 @@ const ManageAllOrders = () => {
 
     return (
         <div>
-            <h2>this is Manage Orders</h2>
-            <p>all orders {myOrders.length} </p>
+            <h2>Admin Manage All Orders</h2>
+            <p>Total Orders:- {myOrders.length} </p>
 
             {/* my orders list */}
             <Table responsive="sm" className="my-5">
                 <thead>
                     <tr>
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>myOrder Placer Name</th>
+                            <th key={index}>Order Placer Name</th>
                         ))}
 
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}> myOrder Id </th>
+                            <th key={index}> Order Id </th>
                         ))}
 
                         {Array.from({ length: 1 }).map((_, index) => (
@@ -125,7 +125,7 @@ const ManageAllOrders = () => {
                             ))}
                             {Array.from({ length: 1 }).map((_, index) => (
                                 <td key={index}>
-                                    <button onClick={() => confirmID(myOrder?._id)} className="mx-3 text-success">
+                                    <button onClick={() => confirmationOrder(myOrder?._id)} className="mx-3 text-success">
                                         <FontAwesomeIcon icon={faCheckCircle} />
                                     </button>
                                 </td>

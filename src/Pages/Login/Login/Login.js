@@ -8,6 +8,7 @@ import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import loginimg from '../../../img/Login/undraw_Login_re_4vu2.png';
 import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation';
 
 
 const Login = () => {
@@ -37,6 +38,7 @@ const Login = () => {
 
     return (
         <Container>
+            <Navigation></Navigation>
             <form
                 onSubmit={handleLoginSubmit}
                 className="pt-5">

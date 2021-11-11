@@ -38,18 +38,14 @@ const MyOrders = () => {
     };
 
     return (
-        <div>
-            <h2>this is my orders</h2>
-            <p>all orders {myOrders.length} </p>
+        <div className="pt-3">
+            <h2>My All Order With Status</h2>
+            <p>My All Orders:- {myOrders.length} </p>
 
             {/* my orders list */}
             <Table responsive="sm" className="my-5">
                 <thead>
                     <tr>
-                        {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>myOrder Placer Name</th>
-                        ))}
-
                         {Array.from({ length: 1 }).map((_, index) => (
                             <th key={index}> myOrder Id </th>
                         ))}
@@ -69,11 +65,6 @@ const MyOrders = () => {
                 {myOrders.map((myOrder) => (
                     <tbody>
                         <tr>
-                            {Array.from({ length: 1 }).map((_, index) => (
-                                <td className="fw-bold" key={index}>
-                                    {myOrder?.Name}
-                                </td>
-                            ))}
 
                             {Array.from({ length: 1 }).map((_, index) => (
                                 <td className="fw-bold" key={index}>

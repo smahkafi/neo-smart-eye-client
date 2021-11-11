@@ -83,6 +83,9 @@ const useFirebase = () => {
     }, [auth])
 
 
+    // make admin
+
+
     useEffect(() => {
         fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
