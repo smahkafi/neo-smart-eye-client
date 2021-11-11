@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
 import Navigation from '../Shared/Navigation/Navigation';
+import Footer from '../Shared/Footer/Footer';
 
 const Orders = () => {
     const { id } = useParams();
@@ -49,7 +50,6 @@ const Orders = () => {
     return (
         <div>
             <Navigation></Navigation>
-
             <div className="row">
                 <div className="col-sm-12 col-md-6 col-lg-5 p-2">
                     <div>
@@ -97,6 +97,7 @@ const Orders = () => {
                     </form>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

@@ -23,39 +23,41 @@ const Navigation = () => {
 
                         {
                             user?.email ?
-
-                                <Button onClick={logOut} className="ms-2 btn-primary">Log Out</Button>
+                                <>
+                                    <Button Button onClick={logOut} className="ms-2 btn-primary">Log Out</Button>
+                                    <NavLink to="/dashboard">Dash Board</NavLink>
+                                </>
 
                                 // <Nav.Link as={NavLink} className="text-dark" to="/dashboard">DASHBOARD</Nav.Link>
                                 : (
-                                    <NavLink to="/login">
-                                        <Button className="btn-primary"> log in</Button>
-                                    </NavLink>
-                                    // <>
+                                    <>
+                                        <NavLink to="/login">
+                                            <Button className="btn-primary"> log in</Button>
+                                        </NavLink>
 
-                                    //     <NavDropdown
-                                    //         title={
-                                    //             <img
-                                    //                 style={{
-                                    //                     width: "45px",
-                                    //                     borderRadius: "50%",
-                                    //                 }}
-                                    //                 src={user?.photoURL}
-                                    //                 alt="" />}>
+                                        {/* <NavDropdown
+                                            title={
+                                                <img
+                                                    style={{
+                                                        width: "45px",
+                                                        borderRadius: "50%",
+                                                    }}
+                                                    src={user?.photoURL}
+                                                    alt="" />}>
 
-                                    //         <div className="text-center mx-auto">
-                                    //             <h6>{user?.displayName}</h6>
-                                    //             <p className="m-0 mb-2">{user?.email}</p>
-                                    //             <button onClick={logOut} className="btn btn-primary">
-                                    //                 SIGN OUT
-                                    //             </button>
-                                    //         </div>
-                                    //     </NavDropdown>
-                                    // </>
+                                            <div className="text-center mx-auto">
+                                                <h6>{user?.displayName}</h6>
+                                                <p className="m-0 mb-2">{user?.email}</p>
+                                                <button onClick={logOut} className="btn btn-primary">
+                                                    SIGN OUT
+                                                </button>
+                                            </div>
+                                        </NavDropdown> */}
+                                    </>
                                 )}
                     </Navbar.Collapse>
                 </Container>
-            </Navbar>
+            </Navbar >
         </>
     );
 };

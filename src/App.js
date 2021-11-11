@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
@@ -9,6 +8,7 @@ import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/NotFound/NotFound';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import Orders from './Pages/Orders/Orders';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -25,9 +25,9 @@ function App() {
             <Route path="/products">
               <Products></Products>
             </Route>
-            <Route path="/orders/:id">
+            <PrivateRoute path="/orders/:id">
               <Orders></Orders>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
