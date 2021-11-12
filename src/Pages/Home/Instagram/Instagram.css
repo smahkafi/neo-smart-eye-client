@@ -1,4 +1,25 @@
-.insta1 {
-  background-image: url(../../../img/instagram/1.jpg);
-  background-repeat: no-repeat;
+.insta {
+  position: relative;
+  max-width: 800px; /* Maximum width */
+  margin: 0 auto; /* Center it */
+}
+
+.insta .content {
+  position: absolute; /* Position the background text */
+  top: 0; /* At the bottom. Use top:0 to append it to the top */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(250, 247, 247); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 20px; /* Some padding */
+  opacity: 0.6;
+}
+
+.insta .content:hover {
+  opacity: 0.9;
+}
+
+Link .insta-icon {
+  font-size: 30px;
 }

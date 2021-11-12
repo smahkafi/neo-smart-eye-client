@@ -13,19 +13,22 @@ const FeaturesProducts = () => {
             .then(data => setfeaturs(data))
     }, [])
     return (
-        <Container className="">
-            <h2 className="py-2 text-">BROWSE OUR PRODUCTS</h2>
+        <Container>
+            <h2 className="py-2">BROWSE OUR PRODUCTS</h2>
             <p className="py-2 text-secondary">Explore our new summer collection</p>
 
-            <div className="row">
+            <div className="row bg-light rounded">
                 {
-                    featurs.slice(0, 6).map(feature => <Feature key={feature._id} feature={feature}                    >
-
-                    </Feature>)
+                    featurs.slice(0, 6).map(feature =>
+                        <Feature
+                            key={feature._id}
+                            feature={feature}                    >
+                        </Feature>)
                 }
-                <Link className="mt-3" to="/products">
+                <Link className="mt-3 mb-3" to="/products">
                     <Button className="btn btn-dark">Explore More</Button>
                 </Link>
+
             </div>
 
 

@@ -10,7 +10,7 @@ import './Feature.css'
 const Feature = (props) => {
     const { name, category, img, rating, price, _id, descriptions } = props.feature;
     return (
-        <div className="col-sm-12 col-md-6 col-lg-4 py-4 px-4 bg-light">
+        <div className="col-sm-12 col-md-6 col-lg-4 py-4 px-4">
             <div className="bg-feature py-2">
                 <div class="card" >
                     <div>
