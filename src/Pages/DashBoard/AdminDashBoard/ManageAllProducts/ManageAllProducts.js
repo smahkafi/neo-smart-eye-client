@@ -57,7 +57,6 @@ const ManageAllProducts = () => {
                             <th key={index} className="bg-warning border border-3">Product Price</th>
                         ))}
 
-
                         {Array.from({ length: 1 }).map((_, index) => (
                             <th key={index} className="bg-warning border border-3">Delete Product</th>
                         ))}
@@ -105,24 +104,10 @@ const ManageAllProducts = () => {
                             ))}
                         </tr>
                     </tbody>
-
                 ))}
             </Table>
-
         </div >
-
     );
 };
 
 export default ManageAllProducts;
-
-
-
-// {/* <div>
-
-//             <h2>this is manage all products</h2>
-
-//             {/* {
-//                 manageProducts.map(manageProduct => console.log(manageProduct))
-//             } */}
-//         </div> */}
