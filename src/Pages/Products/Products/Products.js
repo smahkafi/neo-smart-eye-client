@@ -5,8 +5,9 @@ import ListProducts from '../ListProducts/ListProducts';
 
 const Products = () => {
     return (
-        <div>
+        <div className="bg-light">
             <Navigation></Navigation>
+            <h2 className="mt-5">List Of <span className="text-secondary">Items</span></h2>
             <ListProducts />
             <Footer></Footer>
         </div>
