@@ -1,4 +1,4 @@
-import { faCheckCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
@@ -7,7 +7,7 @@ const ManageAllProducts = () => {
     const [manageProducts, setManageProducts] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/glasses')
+        fetch('https://secret-reaches-41807.herokuapp.com/glasses')
             .then(res => res.json())
             .then(data => setManageProducts(data))
     }, [manageProducts])
@@ -16,7 +16,7 @@ const ManageAllProducts = () => {
     const deleteId = (id) => {
         const proceed = window.confirm(" Are you want to sure to delete");
         if (proceed) {
-            const url = `http://localhost:5000/glasses/${id}`;
+            const url = `https://secret-reaches-41807.herokuapp.com/glasses/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

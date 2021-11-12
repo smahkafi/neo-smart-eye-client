@@ -1,0 +1,11 @@
+.content-about {
+  text-align: center !important;
+}
+.bg-img {
+  background-image: url(../../../img/About/bg-banner.jpg);
+  background-position: center;
+  height: 60vh !important;
+}
+.shop-content {
+  font-size: 10px;
+}

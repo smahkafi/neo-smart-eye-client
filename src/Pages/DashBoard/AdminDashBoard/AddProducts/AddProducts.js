@@ -15,7 +15,7 @@ const AddProducts = () => {
     // add new glass
     const onSubmit = (data) => {
         data.email = user?.email
-        fetch("http://localhost:5000/glasses", {
+        fetch("https://secret-reaches-41807.herokuapp.com/glasses", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -27,6 +27,9 @@ const AddProducts = () => {
                 if (result.insertedId) {
                     alert("Your new product is inserted");
                     reset();
+                }
+                else {
+                    errors()
                 }
             });
     };

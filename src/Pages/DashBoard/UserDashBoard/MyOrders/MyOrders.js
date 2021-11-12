@@ -11,7 +11,7 @@ const MyOrders = () => {
     const { email } = user;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${email}`)
+        fetch(`https://secret-reaches-41807.herokuapp.com/orders/${email}`)
             .then((res) => res.json())
             .then((data) => setMyOrders(data));
     }, [email]);
@@ -22,7 +22,7 @@ const MyOrders = () => {
     const deleteId = (id) => {
         const proceed = window.confirm("you want to sure to delete");
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://secret-reaches-41807.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

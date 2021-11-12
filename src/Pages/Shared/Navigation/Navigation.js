@@ -6,15 +6,14 @@ import useAuth from './../../../hooks/useAuth';
 import './Navigation.css'
 
 const Navigation = () => {
-    // const { allContext } = useAuth();
     const { user, logOut } = useAuth();
     console.log(user)
     return (
         <>
-            <Navbar bg="info" variant="dark" sticky="top" collapseOnSelect expand="lg">
+            <Navbar style={{ backgroundColor: "#98AFC7" }} variant="dark" sticky="top" collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand as={NavLink} to="/home">
-                        <img src={logo} alt="" />
+                        <img style={{ maxHeight: "40px" }} src={logo} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">

@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://secret-reaches-41807.herokuapp.com/orders`)
             .then((res) => res.json())
             .then((data) => setMyOrders(data));
     }, [orderConfirm]);
@@ -21,7 +21,7 @@ const ManageAllOrders = () => {
     const deleteId = (id) => {
         const proceed = window.confirm("you want to sure to delete");
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://secret-reaches-41807.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: "DELETE",
             })
@@ -40,7 +40,7 @@ const ManageAllOrders = () => {
     const confirmationOrder = (id) => {
         const confirmOrder = window.confirm("Are you sure to confirm?");
         if (confirmOrder) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://secret-reaches-41807.herokuapp.com/orders/${id}`, {
                 method: "PUT",
             })
                 .then((res) => res.json())

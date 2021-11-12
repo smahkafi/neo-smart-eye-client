@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('')
-    const [successful, setSuccessFul] = useState(false)
+    // const [successful, setSuccessFul] = useState(false)
     const emailField = e => {
         setEmail(e.target.value);
     }
     const handelAdmin = e => {
         const user = { email }
-        fetch("http://localhost:5000/users/admin", {
+        fetch("https://secret-reaches-41807.herokuapp.com/users/admin", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

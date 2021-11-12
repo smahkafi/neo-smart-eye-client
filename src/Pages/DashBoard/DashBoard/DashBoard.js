@@ -1,13 +1,12 @@
 import { faPaypal } from '@fortawesome/free-brands-svg-icons';
 import { faSmileBeam } from '@fortawesome/free-regular-svg-icons';
-import { faHome, faPlus, faShoppingCart, faStar, faStore, faTasks, faUserCog, faUserLock } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faPlus, faShoppingCart, faStore, faTasks, faUserCog, faUserLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import {
     Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../hooks/useAuth';
@@ -22,7 +21,6 @@ import ManageAllProducts from '../AdminDashBoard/ManageAllProducts/ManageAllProd
 import MyOrders from '../UserDashBoard/MyOrders/MyOrders';
 import MyReview from '../UserDashBoard/MyReview/MyReview';
 import Payment from '../UserDashBoard/Payment/Payment';
-import "./ManageAllProducts.css"
 
 const DashBoard = () => {
     let { path, url } = useRouteMatch();

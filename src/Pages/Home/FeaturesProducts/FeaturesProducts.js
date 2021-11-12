@@ -8,14 +8,14 @@ const FeaturesProducts = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/glasses')
+        fetch('https://secret-reaches-41807.herokuapp.com/glasses')
             .then(res => res.json())
             .then(data => setfeaturs(data))
     }, [])
     return (
-        <Container>
+        <Container className="mt-3 py-5">
             <h2 className="py-2">BROWSE OUR PRODUCTS</h2>
-            <p className="py-2">Explore our new summer collection</p>
+            <p className="py-2 text-secondary">Explore our new summer collection</p>
 
             <div className="row">
                 {

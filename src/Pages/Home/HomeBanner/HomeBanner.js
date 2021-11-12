@@ -1,25 +1,35 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import leftimg from '../../../img/main-home-rev-img-19.webp';
+import { Carousel } from 'react-bootstrap';
+import slider1 from '../../../img/Carousel/slider-1.jpg'
+import slider2 from '../../../img/Carousel/slider-2.jpg'
+import slider3 from '../../../img/Carousel/slider-3.jpg'
 import './HomeBanner.css';
 
 const HomeBanner = () => {
     return (
-        <div className="row">
-            <div className="col-sm-12 col-md-6 col-lg-6 left-img" >
-                <img src={leftimg} alt="glass" style={{ width: '50%' }} />
-            </div>
-            <div className="col-sm-12 col-md-6 col-lg-6 right-img my-auto">
-                <div className="align-self-center" style={{ margin: "auto 0px" }}>
-                    <h2 className="text-uppercase text-white">A Varaity of stylis</h2>
-                    <p className="text-uppercase text-white">A find the best possible for you</p>
-                    <Link to="/products">
-                        <Button className="text-uppercase btn-primary">Explore more</Button>
-                    </Link>
-                </div>
-            </div>
-        </div>
+        <Carousel>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100 carosel-img"
+                    src={slider1}
+                    alt="First slide"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100 carosel-img"
+                    src={slider2}
+                    alt="First slide"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100 carosel-img"
+                    src={slider3}
+                    alt="First slide"
+                />
+            </Carousel.Item>
+        </Carousel>
     );
 };
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
+import AboutUs from '../AboutUs/AboutUs';
+import Fashion from '../Fashion/Fashion';
 import FeaturesProducts from '../FeaturesProducts/FeaturesProducts';
 import HomeBanner from '../HomeBanner/HomeBanner';
 import Instagram from '../Instagram/Instagram';
@@ -13,6 +15,8 @@ const Home = () => {
         <div>
             <Navigation></Navigation>
             <HomeBanner></HomeBanner>
+            <AboutUs></AboutUs>
+            <Fashion></Fashion>
             <FeaturesProducts></FeaturesProducts>
             <OnlineShop></OnlineShop>
             <Instagram></Instagram>

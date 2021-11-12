@@ -1,5 +1,3 @@
-// import { faEnvelope, faUnlock } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
@@ -37,32 +35,43 @@ const Login = () => {
     }
 
     return (
-        <Container>
+        <div>
             <Navigation></Navigation>
-            <form
-                onSubmit={handleLoginSubmit}
-                className="pt-5">
+            <Container>
+                <div className="row">
+                    <div className="col-sm-12 col-md-6 col-lg-6">
+                        <img className="img-fluid" src={loginimg} alt="" />
+                    </div>
 
-                <input onChange={handleOnChange} type="email" name="email" id="" placeholder="Email" className="border-bottom border-0 w-50" />
-                <br /> <br />
-                <input onChange={handleOnChange} type="password" name="password" id="" placeholder="Password" className="border-bottom border-0 w-50" />
-                <br /> <br />
+                    <div className="col-sm-12 col-md-6 col-lg-6">
+                        <form
+                            onSubmit={handleLoginSubmit}
+                            className="pt-5">
 
-                <input style={{ backgroundColor: '#163336' }} className="mt-5 w-50 btn btn-success m-auto" type="submit" value="Sign In" />
+                            <input onChange={handleOnChange} type="email" name="email" id="" placeholder="Email" className="border-bottom border-0 w-50" />
+                            <br /> <br />
+                            <input onChange={handleOnChange} type="password" name="password" id="" placeholder="Password" className="border-bottom border-0 w-50" />
+                            <br /> <br />
 
-                <p className="text-center pt-3 mb-5">
-                    <NavLink className="text-decoration-none text-success" to="/register">
-                        New User? Please Register!!
-                    </NavLink>
-                </p>
+                            <input style={{ backgroundColor: '#163336' }} className="mt-5 w-50 btn btn-success m-auto" type="submit" value="Sign In" />
 
-                <p className="text-danger">{authError}</p>
+                            <p className="text-center pt-3 mb-5">
+                                <NavLink className="text-decoration-none text-success" to="/register">
+                                    New User? Please Register!!
+                                </NavLink>
+                            </p>
 
-                <p>-------or---------</p>
+                            <p className="text-danger">{authError}</p>
 
-                <button onClick={handleGoogleSignIn} type="submit" className="btn btn-success me-2"> <FontAwesomeIcon icon={faGoogle} /> Google Sign In</button>
-            </form>
-        </Container>
+                            <p>-------or---------</p>
+
+                            <Button onClick={handleGoogleSignIn} type="submit" className="btn btn-dark text-light mb-1 me-2"> <FontAwesomeIcon icon={faGoogle} /> Google Sign In</Button>
+                        </form>
+                    </div>
+                </div>
+            </Container>
+            <Footer></Footer>
+        </div>
     );
 };
 

@@ -8,7 +8,7 @@ const CheckReviews = () => {
     const [checkReviews, setCheckReviews] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://secret-reaches-41807.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setCheckReviews(data))
     }, [checkReviews])
@@ -17,7 +17,7 @@ const CheckReviews = () => {
     const deleteId = (id) => {
         const proceed = window.confirm(" Are you want to sure to delete");
         if (proceed) {
-            const url = `http://localhost:5000/review/${id}`;
+            const url = `https://secret-reaches-41807.herokuapp.com/review/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

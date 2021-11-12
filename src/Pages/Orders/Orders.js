@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
 import Navigation from '../Shared/Navigation/Navigation';
@@ -10,14 +10,14 @@ const Orders = () => {
     const { user } = useAuth()
     const [orders, setOrders] = useState({});
     useEffect(() => {
-        fetch("http://localhost:5000/glasses")
+        fetch("https://secret-reaches-41807.herokuapp.com/glasses")
             .then((res) => res.json())
             .then((data) => {
                 const orders = data?.find((pack) => pack?._id === id);
                 setOrders(orders);
                 reset(orders);
             });
-    }, [id]);
+    }, [id, reset]);
 
     console.log(orders)
 
@@ -31,7 +31,7 @@ const Orders = () => {
     const onSubmit = (data) => {
         data.status = "pending";
         delete data._id;
-        fetch("http://localhost:5000/orders", {
+        fetch("https://secret-reaches-41807.herokuapp.com/orders", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
