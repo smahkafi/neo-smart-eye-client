@@ -47,18 +47,18 @@ const MyOrders = () => {
                 <thead>
                     <tr>
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}> myOrder Id </th>
+                            <th key={index}>My Order Id </th>
                         ))}
 
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Cost</th>
+                            <th key={index}>Order Cost</th>
                         ))}
 
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Status</th>
+                            <th key={index}>Order Status</th>
                         ))}
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Cancle</th>
+                            <th key={index}>Order Delete</th>
                         ))}
                     </tr>
                 </thead>

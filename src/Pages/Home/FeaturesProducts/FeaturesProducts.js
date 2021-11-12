@@ -13,8 +13,8 @@ const FeaturesProducts = () => {
             .then(data => setfeaturs(data))
     }, [])
     return (
-        <Container className="mt-3 py-5">
-            <h2 className="py-2">BROWSE OUR PRODUCTS</h2>
+        <Container className="">
+            <h2 className="py-2 text-">BROWSE OUR PRODUCTS</h2>
             <p className="py-2 text-secondary">Explore our new summer collection</p>
 
             <div className="row">
@@ -23,8 +23,8 @@ const FeaturesProducts = () => {
 
                     </Feature>)
                 }
-                <Link to="/products">
-                    <Button className="btn btn-primary">Explore More</Button>
+                <Link className="mt-3" to="/products">
+                    <Button className="btn btn-dark">Explore More</Button>
                 </Link>
             </div>
 

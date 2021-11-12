@@ -17,7 +17,7 @@ const Orders = () => {
                 setOrders(orders);
                 reset(orders);
             });
-    }, [id, reset]);
+    }, [id, orders]);
 
     console.log(orders)
 

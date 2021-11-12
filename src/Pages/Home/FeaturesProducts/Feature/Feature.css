@@ -1,0 +1,4 @@
+.bg-feature:hover {
+  box-shadow: skyblue 1px 5px 3px 4px;
+  transition: 0.6s;
+}
