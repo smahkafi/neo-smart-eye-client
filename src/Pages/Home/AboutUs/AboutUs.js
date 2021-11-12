@@ -5,7 +5,7 @@ import './AboutUs.css'
 
 const AboutUs = () => {
     return (
-        <div>
+        <div className="mt-5">
             <div className="bg-img">
                 <Container>
                     <div className="row align-middle">
