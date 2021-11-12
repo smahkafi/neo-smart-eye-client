@@ -1,6 +1,6 @@
 # Neo Glasses Eye Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://neo-smart-eye.web.app/).
 
 ## In the project directory, you can find:
 
