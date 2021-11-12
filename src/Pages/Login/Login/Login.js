@@ -38,34 +38,38 @@ const Login = () => {
         <div>
             <Navigation></Navigation>
             <Container>
-                <div className="row">
-                    <div className="col-sm-12 col-md-6 col-lg-6">
+                <div style={{ minHeight: "72vh" }} className="row ">
+                    <div className="col-sm-12 col-md-6 col-lg-6 align-self-center">
                         <img className="img-fluid" src={loginimg} alt="" />
                     </div>
 
-                    <div className="col-sm-12 col-md-6 col-lg-6">
+                    <div className="col-sm-12 col-md-6 col-lg-6 align-self-center">
                         <form
                             onSubmit={handleLoginSubmit}
                             className="pt-5">
 
                             <input onChange={handleOnChange} type="email" name="email" id="" placeholder="Email" className="border-bottom border-0 w-50" />
+
                             <br /> <br />
                             <input onChange={handleOnChange} type="password" name="password" id="" placeholder="Password" className="border-bottom border-0 w-50" />
                             <br /> <br />
 
-                            <input style={{ backgroundColor: '#163336' }} className="mt-5 w-50 btn btn-success m-auto" type="submit" value="Sign In" />
+                            <input style={{ backgroundColor: '#163336' }} className="w-25 btn btn-success m-auto" type="submit" value="Login" />
+                            <span className="mx-2">||</span>
+                            <Button onClick={handleGoogleSignIn} type="submit" className="btn btn-dark text-light me-2"> <FontAwesomeIcon icon={faGoogle} /> Google Sign In</Button>
 
-                            <p className="text-center pt-3 mb-5">
+                            <p className="text-center m-0 p-0 mt-3">
                                 <NavLink className="text-decoration-none text-success" to="/register">
-                                    New User? Please Register!!
+                                    New Here? <br /> Quickly Be Our Family!<div className="btn btn-dark ms-3">Click Here</div>
+
                                 </NavLink>
                             </p>
 
                             <p className="text-danger">{authError}</p>
 
-                            <p>-------or---------</p>
 
-                            <Button onClick={handleGoogleSignIn} type="submit" className="btn btn-dark text-light mb-1 me-2"> <FontAwesomeIcon icon={faGoogle} /> Google Sign In</Button>
+
+
                         </form>
                     </div>
                 </div>

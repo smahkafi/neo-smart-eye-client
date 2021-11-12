@@ -3,7 +3,9 @@ import { useHistory } from 'react-router';
 import { Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-// import signup from '../../../imges/login/signup.jpg';
+import signupImg from '../../../img/Login/undraw_New_entries_re_cffr.png'
+import Navigation from '../../Shared/Navigation/Navigation';
+import Footer from '../../Shared/Footer/Footer';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -29,32 +31,43 @@ const Register = () => {
     }
 
     return (
-        <Container>
-            {
-                <form onSubmit={handleLoginSubmit}
-                    className="pt-5">
+        <>
+            <Navigation></Navigation>
+            <Container>
+                <div style={{ minHeight: "72vh" }} className="row">
+                    <div className="col-sm-12 col-md-6 col-lg-5 align-self-center">
+                        {
+                            <form onSubmit={handleLoginSubmit}
+                                className="pt-5">
 
-                    <input onBlur={handleOnBlur} className="input-field border-bottom border-0 w-50" type="text" name="name" placeholder="Name" required />
-                    <br /> <br />
-                    <input onBlur={handleOnBlur} className="input-field border-bottom border-0 w-50" type="email" name="email" placeholder="Email" required />
-                    <br /> <br />
-                    <input onBlur={handleOnBlur} className="input-field border-bottom border-0 w-50" type="password" name="password" placeholder="Password" required />
-                    <br /> <br />
-                    <input onBlur={handleOnBlur} className="input-field border-bottom border-0 w-50" type="password" name="password2" placeholder="Re-type Password" required />
-                    <br /> <br />
+                                <input onBlur={handleOnBlur} className="input-field border-bottom border-0 w-50" type="text" name="name" placeholder="Name" required />
+                                <br /> <br />
+                                <input onBlur={handleOnBlur} className="input-field border-bottom border-0 w-50" type="email" name="email" placeholder="Email" required />
+                                <br /> <br />
+                                <input onBlur={handleOnBlur} className="input-field border-bottom border-0 w-50" type="password" name="password" placeholder="Password" required />
+                                <br /> <br />
+                                <input onBlur={handleOnBlur} className="input-field border-bottom border-0 w-50" type="password" name="password2" placeholder="Re-type Password" required />
+                                <br /> <br />
 
-                    <input style={{ backgroundColor: '#163336' }} className="mt-5 w-50 btn btn-success m-auto" type="submit" value="Sign Up" />
+                                <input style={{ backgroundColor: '#163336' }} className="mt-5 w-50 btn btn-success m-auto" type="submit" value="Sign Up" />
 
-                    <p className="text-center pt-3 mb-5">
-                        <NavLink className="text-decoration-none text-success" to="/login">
-                            Already Registered? Please Sign In!!
-                        </NavLink>
-                    </p>
+                                <p className="text-center pt-3 mb-5">
+                                    <NavLink className="text-decoration-none text-success" to="/login">
+                                        Already Our Family? Hurry! UP Attend <span className="btn btn-dark">Here</span>
+                                    </NavLink>
+                                </p>
 
-                    <p className="text-danger">{authError}</p>
-                </form>
-            }
-        </Container>
+                                <p className="text-danger">{authError}</p>
+                            </form>
+                        }
+                    </div>
+                    <div className="col-sm-12 col-md-6 col-lg-5 align-self-center">
+                        <img className="img-fluid" src={signupImg} alt="" />
+                    </div>
+                </div>
+            </Container>
+            <Footer></Footer>
+        </>
     );
 };
 

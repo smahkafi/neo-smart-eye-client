@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../../../img/logo-footer-img.webp'
+import logo from '../../../img/logo-footer-img.png'
 
 const Footer = () => {
     return (
@@ -48,8 +48,8 @@ const Footer = () => {
                                 <label class="form-check-label text-white" for="exampleCheck1">Check me out</label>
                                 <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
                             </div>
-                            <div className="form-check">
-                                <Button type="submit" className="btn-primary">Submit</Button>
+                            <div className="form-check p-0">
+                                <Button type="submit" className=" btn-primary">Submit</Button>
                             </div>
                         </form>
                     </div>

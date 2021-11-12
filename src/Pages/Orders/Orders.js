@@ -14,18 +14,6 @@ const Orders = () => {
     const { id } = useParams();
     const { user } = useAuth()
     const [orders, setOrders] = useState({});
-    useEffect(() => {
-        fetch("https://secret-reaches-41807.herokuapp.com/glasses")
-            .then((res) => res.json())
-            .then((data) => {
-                const orders = data?.find((pack) => pack?._id === id);
-                setOrders(orders);
-                reset(orders);
-            });
-    }, [id, orders]);
-
-    console.log(orders)
-
     const {
         register,
         handleSubmit,
@@ -33,6 +21,18 @@ const Orders = () => {
         formState: { errors },
     } = useForm();
 
+    useEffect(() => {
+        fetch("https://secret-reaches-41807.herokuapp.com/glasses")
+            .then((res) => res.json())
+            .then((data) => {
+                const orders = data?.find((order) => order?._id === id);
+                setOrders(orders);
+                reset(orders);
+            });
+    }, [id]);
+
+
+    // handle order submit
     const onSubmit = (data) => {
         data.status = "pending";
         delete data._id;
@@ -89,11 +89,11 @@ const Orders = () => {
 
                     <div className="col-sm-12 col-md-6 col-lg-7 p-2">
 
-                        <form className="p-5 bg-light" onSubmit={handleSubmit(onSubmit)}>
+                        {<form className="p-5 bg-light" onSubmit={handleSubmit(onSubmit)}>
                             <div style={{ backgroundColor: "#E8F6F3" }} className="p-5">
                                 <input className="w-50 rounded mt-2 py-2 px-5" defaultValue={orders?._id} {...register("offer")} /> <br />
 
-                                <input className="w-50 rounded mt-2 py-2 px-5" defaultValue={user.displayName} {...register("Name")} placeholder="name" /> <br />
+                                <input className="w-50 rounded mt-2 py-2 px-5" defaultValue={user?.displayName} {...register("Name")} placeholder="name" /> <br />
 
                                 <input className="w-50 rounded mt-2 py-2 px-5"
                                     defaultValue={user.email}
@@ -110,7 +110,7 @@ const Orders = () => {
                                 <input className="w-50 rounded mt-2 py-2 px-5" placeholder="City" defaultValue="" {...register("city")} /> <br />
                                 <input className="w-50 rounded mt-2 py-2 px-5"
                                     placeholder="phone number"
-                                    defaultValue="+8801"
+                                    maxLength="11"
                                     {...register("phone")}
                                 /> <br />
 
@@ -119,7 +119,7 @@ const Orders = () => {
                                         type="submit" value="Place Order" />
                                 </div>
                             </div>
-                        </form>
+                        </form>}
                     </div>
                 </div>
             </Container>
