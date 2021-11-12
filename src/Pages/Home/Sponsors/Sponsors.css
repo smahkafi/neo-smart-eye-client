@@ -1,3 +1,9 @@
 .for-bg {
   background-color: antiquewhite;
 }
+.sponsors {
+  background-color: rgba(99, 96, 96, 0.109);
+}
+.sponsors:hover {
+  cursor: pointer;
+}

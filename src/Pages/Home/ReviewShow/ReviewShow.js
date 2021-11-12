@@ -8,28 +8,30 @@ const ReviewShow = (props) => {
     const { name, rating, comment } = props.review
     return (
         <div className="col-sm-12 col-md-4 col-lg-4">
-            <p className="d-flex justify-content-evenly">
+            <div className="p-3 bg-light rounded">
+                <p className="d-flex justify-content-evenly">
 
-                <span>
-                    <FontAwesomeIcon className="me-2" icon={faUser}></FontAwesomeIcon>
-                    {name}
-                </span>
-                <span>
-                    <span >
-                        <Rating
-                            readonly
-                            style={{ color: "" }}
-                            initialRating={rating}
-                            emptySymbol={<FontAwesomeIcon icon={emptyStar} />}
-                            fullSymbol={<FontAwesomeIcon icon={fullStar} />}
-                        />{" "}
+                    <span>
+                        <FontAwesomeIcon className="me-2" icon={faUser}></FontAwesomeIcon>
+                        {name}
                     </span>
-                    - <span >
-                        {rating}
+                    <span>
+                        <span >
+                            <Rating
+                                readonly
+                                style={{ color: "" }}
+                                initialRating={rating}
+                                emptySymbol={<FontAwesomeIcon icon={emptyStar} />}
+                                fullSymbol={<FontAwesomeIcon icon={fullStar} />}
+                            />{" "}
+                        </span>
+                        - <span >
+                            {rating}
+                        </span>
                     </span>
-                </span>
-            </p>
-            <p>{comment}</p>
+                </p>
+                <p className="text-start">{comment}</p>
+            </div>
         </div>
     );
 };

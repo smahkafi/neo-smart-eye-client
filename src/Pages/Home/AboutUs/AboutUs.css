@@ -3,6 +3,7 @@
 }
 .bg-img {
   background-image: url(../../../img/About/bg-banner.jpg);
+  background-repeat: no-repeat;
   background-position: center;
   height: 60vh !important;
 }
