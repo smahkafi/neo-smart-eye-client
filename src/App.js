@@ -9,6 +9,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import Orders from './Pages/Orders/Orders';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import UserReviews from './Pages/UserReviews/UserReviews/UserReviews';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route path="/products">
               <Products></Products>
+            </Route>
+            <Route path="/userReviews">
+              <UserReviews></UserReviews>
             </Route>
             <PrivateRoute path="/orders/:id">
               <Orders></Orders>

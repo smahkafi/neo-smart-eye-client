@@ -41,7 +41,7 @@ const Feature = (props) => {
                             <Button className="bg-dark">Buy Now</Button>
                         </Link>
                         <Link to="/products" class="card-link">
-                            <Button className="bg-dark">See More</Button>
+                            <Button className="bg-dark">Similar All Products</Button>
                         </Link>
                     </div>
                 </div>

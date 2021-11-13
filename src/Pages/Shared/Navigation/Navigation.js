@@ -18,6 +18,7 @@ const Navigation = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={NavLink} className="text-dark ms-2 btn btn-outline-warning" to="/home">HOME</Nav.Link>
                         <Nav.Link as={NavLink} className="text-dark ms-2 btn btn-outline-warning" to="/products">Products</Nav.Link>
+                        <Nav.Link as={NavLink} className="text-dark ms-2 btn btn-outline-warning" to="/userReviews">User Reviews</Nav.Link>
                         {
                             !user?.email ?
                                 <>

@@ -14,7 +14,7 @@ const Instagram = () => {
         <div className="bg-dark mt-5 py-5">
             <Container>
                 <div className="text-white py-5">
-                    <h2> Visit our instagram </h2>
+                    <h2> Visit our <span className="text-warning">instagram</span> </h2>
                     <p>Check our latest posts now</p>
 
                     <div className="row">

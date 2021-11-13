@@ -51,6 +51,7 @@ const Footer = () => {
                         </form>
                     </div>
                 </div>
+                <p className="text-white m-0">Copyright  &copy; <span className="text-warning">Kafi's World</span> 2020-2021</p>
             </Container>
         </div >
     );

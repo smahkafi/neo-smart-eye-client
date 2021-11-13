@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import ReviewShow from '../ReviewShow/ReviewShow';
 import './ReviewsShow.css'
 
@@ -23,6 +24,13 @@ const ReviewsShow = () => {
                         ></ReviewShow>)
                     }
                 </div>
+                <Link to="/userReviews">
+                    <input
+                        type="submit"
+                        value="Explore More"
+                        className="fw-bold text-muted p-2 m-2 w-25 btn btn-light btn-outline-warning"
+                    />
+                </Link>
             </Container>
         </div>
     );
