@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useAuth from '../../../../hooks/useAuth';
 import { Table } from "react-bootstrap";
+import Swal from 'sweetalert2';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -20,21 +21,41 @@ const MyOrders = () => {
 
     //delete order
     const deleteId = (id) => {
-        const proceed = window.confirm("you want to sure to delete");
-        if (proceed) {
-            const url = `https://secret-reaches-41807.herokuapp.com/orders/${id}`;
-            fetch(url, {
-                method: "DELETE",
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    if (data.deletedCount === 1) {
-                        alert("Product deleted");
-                        const restMyOrders = myOrders.filter((list) => list._id !== id);
-                        setMyOrders(restMyOrders);
-                    }
-                });
-        }
+        // const proceed = window.confirm("you want to sure to delete");
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const url = `https://secret-reaches-41807.herokuapp.com/orders/${id}`;
+                fetch(url, {
+                    method: "DELETE",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount === 1) {
+                            alert("Product deleted");
+                            const restMyOrders = myOrders.filter((list) => list._id !== id);
+                            setMyOrders(restMyOrders);
+                        }
+                    });
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+
+
+        // if (proceed) {
+
+        // }
     };
 
     return (

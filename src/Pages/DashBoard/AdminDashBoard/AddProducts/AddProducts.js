@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../hooks/useAuth";
 import addProductsImg from '../../../../img/DashBoard/product_teardown_elol.png'
+import Swal from 'sweetalert2';
 
 const AddProducts = () => {
     const { user } = useAuth()
@@ -26,7 +27,7 @@ const AddProducts = () => {
             .then((res) => res.json())
             .then((result) => {
                 if (result.insertedId) {
-                    alert("Your new product is inserted");
+                    Swal.fire('Wow! Your New Product Inserted')
                     reset();
                 }
                 else {

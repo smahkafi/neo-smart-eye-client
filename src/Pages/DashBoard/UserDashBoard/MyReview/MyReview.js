@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 import useAuth from '../../../../hooks/useAuth';
 
 
@@ -22,7 +23,7 @@ const MyReview = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.insertedId) {
-                    alert('review added successfully')
+                    Swal.fire('Successfully Posted Your Review!')
                     reset()
                 }
             });
@@ -43,7 +44,7 @@ const MyReview = () => {
                     {/* Rating */}
                     <input
                         {...register("rating")}
-                        placeholder="Give your rating"
+                        placeholder="Give your rating 1-5"
                         className="p-2 m-2 w-25 text-center "
                         name="quantity"
                         min="1"

@@ -1,5 +1,7 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('')
@@ -17,7 +19,9 @@ const MakeAdmin = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                if (data.modifiedCount) {
+                    Swal.fire('Are you sure make another admin?')
+                }
             });
         e.preventDefault()
     }

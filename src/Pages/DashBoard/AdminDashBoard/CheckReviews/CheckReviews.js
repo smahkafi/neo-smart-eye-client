@@ -1,6 +1,8 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
+
 import { Table } from 'react-bootstrap';
 
 const CheckReviews = () => {
@@ -15,21 +17,34 @@ const CheckReviews = () => {
 
     //delete products
     const deleteId = (id) => {
-        const proceed = window.confirm(" Are you want to sure to delete");
-        if (proceed) {
-            const url = `https://secret-reaches-41807.herokuapp.com/review/${id}`;
-            fetch(url, {
-                method: "DELETE",
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    if (data.deletedCount) {
-                        alert("Review deleted");
-                        const restCheckReviews = checkReviews.filter((checkReview) => checkReview?._id !== id);
-                        setCheckReviews(restCheckReviews);
-                    }
-                });
-        }
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert here!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const url = `https://secret-reaches-41807.herokuapp.com/review/${id}`;
+                fetch(url, {
+                    method: "DELETE",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount) {
+                            const restCheckReviews = checkReviews.filter((checkReview) => checkReview?._id !== id);
+                            setCheckReviews(restCheckReviews);
+                        }
+                    });
+                Swal.fire(
+                    'Deleted!',
+                    'Review has been deleted.',
+                    'success'
+                )
+            }
+        })
     };
 
     return (

@@ -1,6 +1,7 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import { Table } from 'react-bootstrap';
 
 const ManageAllProducts = () => {
@@ -14,21 +15,34 @@ const ManageAllProducts = () => {
 
     //delete products
     const deleteId = (id) => {
-        const proceed = window.confirm(" Are you want to sure to delete");
-        if (proceed) {
-            const url = `https://secret-reaches-41807.herokuapp.com/glasses/${id}`;
-            fetch(url, {
-                method: "DELETE",
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    if (data.deletedCount) {
-                        alert("Product deleted");
-                        const restmanageProducts = manageProducts.filter((manageProduct) => manageProduct?._id !== id);
-                        setManageProducts(restmanageProducts);
-                    }
-                });
-        }
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert here!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const url = `https://secret-reaches-41807.herokuapp.com/glasses/${id}`;
+                fetch(url, {
+                    method: "DELETE",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount) {
+                            const restmanageProducts = manageProducts.filter((manageProduct) => manageProduct?._id !== id);
+                            setManageProducts(restmanageProducts);
+                        }
+                    });
+                Swal.fire(
+                    'Deleted!',
+                    'Your product has been deleted.',
+                    'success'
+                )
+            }
+        })
     };
     return (
         <div>
