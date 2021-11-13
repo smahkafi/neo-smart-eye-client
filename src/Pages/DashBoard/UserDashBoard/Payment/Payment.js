@@ -1,10 +1,10 @@
 import React from 'react';
-import payment from "../../../../img/DashBoard/online_transactions.png"
+import payment from "../../../../img/DashBoard/coming_soon.jpg"
 
 const Payment = () => {
     return (
         <div>
-            <img className="img-fluid" src={payment} alt="" />
+            <img style={{ maxHeight: "50vh" }} className="img-fluid" src={payment} alt="" />
         </div>
     );
 };

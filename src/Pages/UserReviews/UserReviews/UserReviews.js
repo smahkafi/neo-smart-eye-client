@@ -26,11 +26,6 @@ const UserReviews = () => {
                         ></UserReview>)
                     }
                 </div>
-                <Link to="/userReviews">
-                    <button className="btn-light btn-outline-warning">
-                        Explore More
-                    </button>
-                </Link>
             </Container>
             <Footer></Footer>
         </div>

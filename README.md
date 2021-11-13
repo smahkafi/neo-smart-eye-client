@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://neo-smart-eye.web.app/).
 
+##Neo_Glasses_Eye offers an extensive product selection,outstanding customer service and an easy and secure Online shopping. You will find wide range of product from all categories such Sunglass, Normal Frame, Eye Glass, Blue Glass. Quality is our commitment.We never compromise on quality.
+
 ## In the project directory, you can find:
 
 - World Class Glasses With Suitable Price.

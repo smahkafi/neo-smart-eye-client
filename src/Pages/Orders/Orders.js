@@ -31,7 +31,6 @@ const Orders = () => {
             });
     }, [id]);
 
-
     // handle order submit
     const onSubmit = (data) => {
         data.status = "pending";
