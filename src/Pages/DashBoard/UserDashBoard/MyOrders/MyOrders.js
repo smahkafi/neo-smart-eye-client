@@ -39,7 +39,6 @@ const MyOrders = () => {
                     .then((res) => res.json())
                     .then((data) => {
                         if (data.deletedCount === 1) {
-                            alert("Product deleted");
                             const restMyOrders = myOrders.filter((list) => list._id !== id);
                             setMyOrders(restMyOrders);
                         }

@@ -1,9 +1,9 @@
 import { faPaypal } from '@fortawesome/free-brands-svg-icons';
 import { faSmileBeam } from '@fortawesome/free-regular-svg-icons';
-import { faHome, faPlus, faShoppingCart, faStore, faTasks, faUserCog, faUserLock } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faPlus, faShoppingCart, faSignOutAlt, faStore, faTasks, faUserCog, faUserLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import {
     Switch,
     Route,
@@ -26,7 +26,7 @@ import './DashBoard.css'
 
 const DashBoard = () => {
     let { path, url } = useRouteMatch();
-    const { user, admin } = useAuth();
+    const { user, admin, logOut } = useAuth();
     return (
         <div className="dashbord-root">
             <Navigation></Navigation>
@@ -44,6 +44,13 @@ const DashBoard = () => {
                                 <div>
                                     <Link to="/products">
                                         <FontAwesomeIcon className="fs-1 m-0 p-0 text-white mx-2" icon={faStore}></FontAwesomeIcon>
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link to="/products">
+                                        <Button onClick={logOut} className="btn btn-primary">
+                                            <FontAwesomeIcon className="fs-1 m-0 p-0 text-white mx-2" icon={faSignOutAlt}></FontAwesomeIcon>
+                                        </Button>
                                     </Link>
                                 </div>
                             </div>
