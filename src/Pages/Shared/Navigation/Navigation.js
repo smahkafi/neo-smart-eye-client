@@ -16,19 +16,19 @@ const Navigation = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link as={NavLink} className="text-dark" to="/home">HOME</Nav.Link>
-                        <Nav.Link as={NavLink} className="text-dark" to="/products">Products</Nav.Link>
+                        <Nav.Link as={NavLink} className="text-dark ms-2 btn btn-outline-warning" to="/home">HOME</Nav.Link>
+                        <Nav.Link as={NavLink} className="text-dark ms-2 btn btn-outline-warning" to="/products">Products</Nav.Link>
                         {
                             !user?.email ?
                                 <>
                                     <NavLink to="/login">
-                                        <Button className="btn-primary"> log in</Button>
+                                        <Button className="text-dark ms-2 btn btn-outline-warning"> log in</Button>
                                     </NavLink>
 
                                 </>
                                 : (
                                     <>
-                                        <NavLink className="text-decoration-none text-light btn bg-primary" to="/dashboard">Dash Board</NavLink>
+                                        <NavLink className="text-decoration-none text-dark ms-2 btn btn-outline-warning" to="/dashboard">Dash Board</NavLink>
                                         <NavDropdown
                                             title={
                                                 <img
@@ -41,7 +41,7 @@ const Navigation = () => {
                                             <div className="text-center mx-auto">
                                                 <h6>{user?.displayName}</h6>
                                                 <p className="m-0 mb-2">{user?.email}</p>
-                                                <button onClick={logOut} className="btn btn-primary">
+                                                <button onClick={logOut} className="text-dark btn btn-outline-warning">
                                                     SIGN OUT
                                                 </button>
                                             </div>

@@ -58,32 +58,32 @@ const ManageAllOrders = () => {
     return (
         <div>
             <h2>Admin Manage All Orders</h2>
-            <p>Total Orders:- {myOrders.length} </p>
+            <p className="fs-4">Total Orders:- {myOrders.length} </p>
 
             {/* my orders list */}
             <Table responsive="sm" className="my-5">
                 <thead>
                     <tr>
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Order Placer Name</th>
+                            <th key={index} className="text-white fs-5 fw-normal">Order Placer Name</th>
                         ))}
 
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}> Order Id </th>
+                            <th key={index} className="text-white fs-5 fw-normal"> Order Id </th>
                         ))}
 
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Cost</th>
+                            <th key={index} className="text-white fs-5 fw-normal">Cost</th>
                         ))}
 
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Status</th>
+                            <th key={index} className="text-white fs-5 fw-normal">Status</th>
                         ))}
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Cancle</th>
+                            <th key={index} className="text-white fs-5 fw-normal">Delete</th>
                         ))}
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Confirm</th>
+                            <th key={index} className="text-white fs-5 fw-normal">Confirm</th>
                         ))}
                     </tr>
                 </thead>
@@ -91,25 +91,25 @@ const ManageAllOrders = () => {
                     <tbody>
                         <tr>
                             {Array.from({ length: 1 }).map((_, index) => (
-                                <td className="fw-bold" key={index}>
+                                <td className="fw-normal fs-4 text-light" key={index}>
                                     {myOrder?.Name}
                                 </td>
                             ))}
 
                             {Array.from({ length: 1 }).map((_, index) => (
-                                <td className="fw-bold" key={index}>
+                                <td className="fw-normal fs-4 text-light" key={index}>
                                     {myOrder?._id}
                                 </td>
                             ))}
 
                             {Array.from({ length: 1 }).map((_, index) => (
-                                <td className="fw-bold" key={index}>
+                                <td className="fw-normal fs-4 text-light" key={index}>
                                     {myOrder?.price} $
                                 </td>
                             ))}
 
                             {Array.from({ length: 1 }).map((_, index) => (
-                                <td className="fw-bold" key={index}>
+                                <td className="fw-normal fs-4 text-light" key={index}>
                                     {myOrder?.status}
                                 </td>
                             ))}

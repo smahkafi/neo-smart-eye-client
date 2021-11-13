@@ -48,27 +48,25 @@ const Login = () => {
                             onSubmit={handleLoginSubmit}
                             className="pt-5">
 
-                            <input onChange={handleOnChange} type="email" name="email" id="" placeholder="Email" className="border-bottom border-0 w-50" />
+                            <input onChange={handleOnChange} type="email" name="email" id="" placeholder="Email" className="border-bottom border-0 w-50 mb-5" />
 
-                            <br /> <br />
-                            <input onChange={handleOnChange} type="password" name="password" id="" placeholder="Password" className="border-bottom border-0 w-50" />
-                            <br /> <br />
+                            <br />
+                            <input onChange={handleOnChange} type="password" name="password" id="" placeholder="Password" className="border-bottom border-0 w-50 mb-5" />
+                            <br />
 
-                            <input style={{ backgroundColor: '#163336' }} className="w-25 btn btn-success m-auto" type="submit" value="Login" />
+                            <input style={{ backgroundColor: '#163336' }} className="w-25 btn btn-dark m-auto" type="submit" value="Login" />
+
                             <span className="mx-2">||</span>
+
                             <Button onClick={handleGoogleSignIn} type="submit" className="btn btn-dark text-light me-2"> <FontAwesomeIcon icon={faGoogle} /> Google Sign In</Button>
 
                             <p className="text-center m-0 p-0 mt-3">
-                                <NavLink className="text-decoration-none text-success" to="/register">
-                                    New Here? <br /> Quickly Be Our Family!<div className="btn btn-dark ms-3">Click Here</div>
-
+                                <NavLink className="text-decoration-none text-dark" to="/register">
+                                    New Here? <br /> Quickly Be Our Family!<div className="btn btn-outline-dark text-warning ms-3">Click Here</div>
                                 </NavLink>
                             </p>
 
                             <p className="text-danger">{authError}</p>
-
-
-
 
                         </form>
                     </div>

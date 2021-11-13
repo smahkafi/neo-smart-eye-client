@@ -1,0 +1,9 @@
+.dashbord-root {
+  background-image: url(../../../img/DashBoard/db-bg.jpg);
+  /* color: white !important; */
+}
+.admin-root {
+  background: transparent;
+  background-image: url(../../../img/DashBoard/dashboard.png);
+  background-position: right;
+}

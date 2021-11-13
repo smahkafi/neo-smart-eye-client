@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('')
-    // const [successful, setSuccessFul] = useState(false)
     const emailField = e => {
         setEmail(e.target.value);
     }
@@ -24,10 +23,18 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <form onSubmit={handelAdmin}>
-                <input onBlur={emailField} type="email" placeholder="type an email" /> <br />
-                <Button type="submit">Make Admin</Button>
-            </form>
+            <h2>Make an new admin by email</h2>
+            <div className="mt-5">
+                <form onSubmit={handelAdmin}>
+                    <input
+                        onBlur={emailField}
+                        type="email"
+                        maxLength="50"
+                        className="w-25 py-2 text-center"
+                        placeholder="Type an Email" /> <br />
+                    <Button className="mt-5 btn btn-outline-warning" type="submit">Make Admin</Button>
+                </form>
+            </div>
         </div >
     );
 };

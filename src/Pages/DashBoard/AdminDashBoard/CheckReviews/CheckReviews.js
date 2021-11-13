@@ -34,7 +34,7 @@ const CheckReviews = () => {
 
     return (
         <div>
-            <h2>this is reviews checking page</h2>
+            <h2>All users reviews manage</h2>
             <p>Total Reviews{checkReviews.length} </p>
 
             <Table responsive="sm" className="my-5">
@@ -104,7 +104,6 @@ const CheckReviews = () => {
                     </tbody>
                 ))}
             </Table>
-
         </div>
     );
 };

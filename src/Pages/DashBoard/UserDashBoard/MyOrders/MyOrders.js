@@ -40,25 +40,26 @@ const MyOrders = () => {
     return (
         <div className="pt-3">
             <h2>My All Order With Status</h2>
-            <p>My All Orders:- {myOrders.length} </p>
+            <p className="fs-4">My All Orders:- {myOrders.length} </p>
 
             {/* my orders list */}
             <Table responsive="sm" className="my-5">
                 <thead>
                     <tr>
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>My Order Id </th>
+                            <th key={index} className="text-white fs-5 fw-normal">My Order Id </th>
                         ))}
 
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Order Cost</th>
+                            <th key={index} className="text-white fs-5 fw-normal">Order Cost</th>
                         ))}
 
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Order Status</th>
+                            <th key={index} className="text-white fs-5 fw-normal">Order Status</th>
                         ))}
+
                         {Array.from({ length: 1 }).map((_, index) => (
-                            <th key={index}>Order Delete</th>
+                            <th key={index} className="text-white fs-5 fw-normal">Order Delete</th>
                         ))}
                     </tr>
                 </thead>
@@ -67,19 +68,19 @@ const MyOrders = () => {
                         <tr>
 
                             {Array.from({ length: 1 }).map((_, index) => (
-                                <td className="fw-bold" key={index}>
+                                <td className="fw-normal fs-4 text-light" key={index}>
                                     {myOrder?._id}
                                 </td>
                             ))}
 
                             {Array.from({ length: 1 }).map((_, index) => (
-                                <td className="fw-bold" key={index}>
+                                <td className="fw-normal fs-4 text-light" key={index}>
                                     {myOrder?.price} $
                                 </td>
                             ))}
 
                             {Array.from({ length: 1 }).map((_, index) => (
-                                <td className="fw-bold" key={index}>
+                                <td className="fw-normal fs-4 text-light" key={index}>
                                     {myOrder?.status}
                                 </td>
                             ))}

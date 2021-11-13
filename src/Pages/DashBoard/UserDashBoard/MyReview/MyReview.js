@@ -45,6 +45,9 @@ const MyReview = () => {
                         {...register("rating")}
                         placeholder="Give your rating"
                         className="p-2 m-2 w-25 text-center "
+                        name="quantity"
+                        min="1"
+                        max="5"
                         required
                     />
                     <br />

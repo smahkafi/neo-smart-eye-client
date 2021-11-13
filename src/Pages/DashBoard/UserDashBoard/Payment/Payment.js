@@ -1,5 +1,5 @@
 import React from 'react';
-import payment from "../../../../img/online_transactions.png"
+import payment from "../../../../img/DashBoard/online_transactions.png"
 
 const Payment = () => {
     return (

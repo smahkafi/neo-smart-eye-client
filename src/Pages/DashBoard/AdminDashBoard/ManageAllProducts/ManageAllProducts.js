@@ -33,14 +33,11 @@ const ManageAllProducts = () => {
     return (
         <div>
             <h2>Admin Manage All Products</h2>
-            <p>Total Products:- {manageProducts.length} </p>
-
+            <p className="fs-4">Total Products:- {manageProducts.length} </p>
             {/* my orders list */}
-
             <Table responsive="sm" className="my-5">
                 <thead>
                     <tr >
-
                         {Array.from({ length: 1 }).map((_, index) => (
                             <th key={index} className="bg-warning border border-3"> Product Name</th>
                         ))}
@@ -66,8 +63,6 @@ const ManageAllProducts = () => {
                 {manageProducts.map((manageProduct) => (
                     <tbody>
                         <tr>
-
-
                             {Array.from({ length: 1 }).map((_, index) => (
                                 <td className="fw-bold bg-info" key={index}>
                                     {manageProduct?.name}

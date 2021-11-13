@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import { Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import signupImg from '../../../img/Login/undraw_New_entries_re_cffr.png'
+import signupImg from '../../../img/Login/Add_user_re_5oib.png'
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
 
@@ -53,7 +53,7 @@ const Register = () => {
 
                                 <p className="text-center pt-3 mb-5">
                                     <NavLink className="text-decoration-none text-success" to="/login">
-                                        Already Our Family? Hurry! UP Attend <span className="btn btn-dark">Here</span>
+                                        Already Our Family? Hurry! UP Attend <span className="ms-2 btn btn-outline-dark text-warning">Here</span>
                                     </NavLink>
                                 </p>
 

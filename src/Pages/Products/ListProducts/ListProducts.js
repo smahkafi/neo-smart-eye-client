@@ -1,9 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons";
-import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 import React, { useEffect, useState } from 'react';
-import { Button, Container } from 'react-bootstrap';
-import Rating from 'react-rating';
+import { Container } from 'react-bootstrap';
 import ListProduct from '../ListProduct/ListProduct';
 
 const ListProducts = () => {

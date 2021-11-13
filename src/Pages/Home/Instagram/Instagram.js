@@ -11,7 +11,6 @@ import insta5 from '../../../img/instagram/5.jpg'
 
 const Instagram = () => {
     return (
-        // bg-dark
         <div className="bg-dark mt-5 py-5">
             <Container>
                 <div className="text-white py-5">

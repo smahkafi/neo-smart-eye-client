@@ -28,10 +28,7 @@ const FeaturesProducts = () => {
                 <Link className="mt-3 mb-3" to="/products">
                     <Button className="btn btn-dark">Explore More</Button>
                 </Link>
-
             </div>
-
-
         </Container >
     );
 };

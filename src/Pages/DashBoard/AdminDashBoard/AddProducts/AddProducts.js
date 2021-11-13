@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../hooks/useAuth";
+import addProductsImg from '../../../../img/DashBoard/product_teardown_elol.png'
 
 const AddProducts = () => {
     const { user } = useAuth()
@@ -36,41 +37,56 @@ const AddProducts = () => {
 
     return (
         <div>
-            <div
-                className="col-sm-12 col-md-6 col-lg-6 mx-auto my-5 border p-0 rounded"
-                style={{ width: "16rem" }}
-            >
-                <h2>Add A New Tours</h2>
-                <form className="" onSubmit={handleSubmit(onSubmit)}>
-                    <input
-                        {...register("name")}
-                        placeholder="Product Name"
-                        className="py-1 px-2 my-2 w-50"
-                    />
-                    <input
-                        {...register("category")}
-                        placeholder="Category Name"
-                        className="py-1 px-2 my-2 w-50"
-                    />
-                    <input
-                        {...register("price")}
-                        placeholder="Product Price"
-                        className="py-1 px-2 my-2 w-50"
-                    />
-                    <input
-                        {...register("rating")}
-                        placeholder="Product ratting min 1 to 5"
-                        className="py-1 px-2 my-2 w-50"
-                    />
-                    <input
-                        {...register("img")}
-                        placeholder="Product img link"
-                        className="py-1 px-2 my-2 w-50"
-                    />
-                    <div className="btn btn-success">
-                        <input type="submit" value="Add Product" />
-                    </div>
-                </form>
+            <div className="row">
+
+                <div className="col-sm-12 col-md-6 col-lg-6 mx-auto my-5 border p-0 rounded">
+                    <img className="img-fluid" src={addProductsImg} alt="" />
+                </div>
+
+                <div className="col-sm-12 col-md-6 col-lg-6 mx-auto my-5 border p-0 rounded">
+                    <h2>Add A New Glass</h2>
+                    <form className="" onSubmit={handleSubmit(onSubmit)}>
+                        <input
+                            {...register("name")}
+                            placeholder="Product Name"
+                            className="p-2 m-2 w-50 text-center"
+                        />
+                        <input
+                            {...register("category")}
+                            placeholder="Category Name"
+                            className="p-2 m-2 w-50 text-center"
+                        />
+                        <input
+                            {...register("price")}
+                            placeholder="Product Price"
+                            className="p-2 m-2 w-50 text-center"
+                        />
+                        <input
+                            {...register("rating")}
+                            placeholder="Product ratting min 1 to 5"
+                            className="p-2 m-2 w-50 text-center"
+                        />
+                        <input
+                            {...register("img")}
+                            placeholder="Product img link"
+                            className="p-2 m-2 w-50 text-center"
+                        />
+                        <textarea
+                            {...register("descriptions")}
+                            rows="5"
+                            cols="100"
+                            placeholder="Give a products descriptions"
+                            className="p-2 m-2 w-50 text-center"
+                            maxLength="75"
+                        />
+                        <br />
+                        <input
+                            type="submit"
+                            value="Add Now"
+                            className="fw-bold text-muted p-2 m-2 w-25 btn btn-light btn-outline-warning"
+                        />
+                    </form>
+                </div>
             </div>
         </div>
     );
