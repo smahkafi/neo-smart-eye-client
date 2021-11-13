@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 import { Container } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 const Orders = () => {
     const { id } = useParams();
@@ -45,7 +46,7 @@ const Orders = () => {
             .then((res) => res.json())
             .then((result) => {
                 if (result.insertedId) {
-                    alert("Your Order Is Placed");
+                    Swal.fire('Thanks! Your Order Placed')
                     reset();
                 }
             });
